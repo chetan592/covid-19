@@ -1,0 +1,112 @@
+<div class="example-container">
+<mat-toolbar class="mat-toolbar">
+      <span style="padding-left: 5px;color: floralwhite;">Covid-19 Tracker</span>
+
+      <span class="example-fill-remaining-space"></span>
+      <span class="toolbarSpan" routerLink="" >Global</span>
+      <!--<a href="https://learnprogramminglanguagee.blogspot.com/2020/05/how-to-learn-new-programming-language.html" class="toolbarSpan"
+      target="_blank">blog</a>-->
+      <span class="toolbarSpan" routerLink="/continent_asia" [queryParams]="{continent:'Asia'}">Asia</span>
+      <span class="toolbarSpan" routerLink="/continent_europe" [queryParams]="{continent:'Europe'}">Europe</span>
+      <span class="toolbarSpan" routerLink="/continent_africa" [queryParams]="{continent:'Africa'}">Africa</span>
+      <span class="toolbarSpan" routerLink="/continent_north_america" [queryParams]="{continent:'North America'}">North America</span>
+      <span class="toolbarSpan" routerLink="/continent_south_america" [queryParams]="{continent:'South America'}">South America</span>
+      <span class="toolbarSpan" routerLink="/continent_australia" [queryParams]="{continent:'Australia'}">Australia</span>
+      <span class="toolbarSpan" routerLink="/about">About</span>
+
+</mat-toolbar>
+
+
+<mat-sidenav-container  class="sidenav-container" *ngIf="loaded">
+    <mat-sidenav mode="side" opened  fixedTopGap="56">
+      <mat-spinner *ngIf="!loaded">
+      </mat-spinner>
+      <div>
+        <mat-card style="height: 15px;width: 192px;margin: 20px;background-color:#1F2833;
+        color: white;">
+          <mat-card-header>
+            <mat-card-title style="font-size: medium;">Global Data</mat-card-title>
+          </mat-card-header>
+        </mat-card>
+
+      <mat-card style="margin-top: 5px;background-color:#1F2833" class="example-card">
+        <mat-card-header>
+          <mat-card-title style="font-size: medium;color: white;">Confirmed</mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+          <p style="font-size: x-large;padding-left: 15px; color:red;">
+            {{numberWithCommas(worldStats.cases)}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #1F2833;" class="example-card">
+        <mat-card-header>
+          <mat-card-title  style="font-size: medium;color: white;">Recovered</mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+          <p style="padding-left: 15px; color: lime; font-size: x-large;">
+            {{numberWithCommas(worldStats.recovered)}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #1F2833;" class="example-card">
+        <mat-card-header>
+          <mat-card-title style="font-size: medium;color: white;">New Confirmed</mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+          <p style="font-size: x-large;padding-left: 15px; color: red">
+            {{numberWithCommas(worldStats.todayCases)}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #1F2833;" class="example-card">
+        <mat-card-header>
+          <mat-card-title style="font-size: medium;color: white;">Active</mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+          <p style="font-size: x-large;padding-left: 15px; color:lime;">
+            {{numberWithCommas(worldStats.active)}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #1F2833;" class="example-card">
+        <mat-card-header>
+          <mat-card-title style="font-size: medium;color: white;">Total Deaths</mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+          <p style="font-size: x-large;padding-left: 15px; color: red;">
+            {{numberWithCommas(worldStats.deaths)}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card style="background-color: #1F2833;" class="example-card">
+        <mat-card-header>
+          <mat-card-title style="font-size: medium;color: white;">Tests</mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+          <p style="font-size: x-large;padding-left: 15px; color: red;">
+            {{numberWithCommas(worldStats.tests)}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+
+
+
+    </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  </div>
+
+
+
+

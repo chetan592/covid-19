@@ -1,0 +1,63 @@
+.toolbarSpan{
+    //display: flexbox;
+    //padding-left: 3cm;
+    color: floralwhite;
+    padding-right: 1.5cm;
+    font-size: medium ;
+}
+
+.mat-toolbar{
+    background-color: #1F2833;
+    //position: fixed;
+    z-index: 2;
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+.toolbarSpan:hover{
+    cursor: pointer;
+}
+
+.toolbarSpan:focus{
+    outline: 0;
+}
+
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1;
+  }
+
+ .sidenav-container{
+    flex: 1;
+    //overflow: auto;
+ }
+
+ .sidenav{
+     //width: 280px;
+     //overflow: auto;
+ }
+  
+ .example-card {
+    max-width: 400px;
+    max-height: 49px;
+    margin: 20px;
+    transition: 0.3s;
+  }
+
+  .example-card:hover{
+    cursor: pointer;
+    background-color: lightgray;
+  }
+
+  
+  
+  

@@ -1,0 +1,167 @@
+<div class="global-container">
+
+  <div class="spinnerclass" *ngIf="progressSpinner">
+    <mat-spinner class="custom-spinner" >
+    </mat-spinner>
+    </div>
+
+<div *ngIf="!progressSpinner">
+
+    <div class="row">
+        <div style="background-color:#1f2833 ;border-radius: 8px;margin-left:5px ;">
+            <span style="font-size: xx-large;font-family: Arial, Helvetica, sans-serif;color: white;margin: 5px;">
+                {{continent}}
+            </span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{numberWithCommas(apiData.cases)}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Confirmed</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container">
+                <span style="font-size: x-large;color: #38a169;">{{numberWithCommas(apiData.recovered)}}</span>
+            </div>
+            <div class="type_container">
+                <span style="color: white;">
+                    Recovered</span>
+
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container_grey">
+                <span style="font-size: x-large;color: #718096;">{{numberWithCommas(apiData.tests)}}</span>
+            </div>
+            <div class="type_container_grey">
+                <span style="color: white;">
+                    Tests</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container">
+                <span style="font-size: x-large;color: #38a169;">{{numberWithCommas(apiData.active)}}</span>
+            </div>
+            <div class="type_container">
+                <span style="color: white;">
+                    Active</span>
+
+            </div>
+        </div>
+</div>
+
+
+
+<div class="row">
+
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{numberWithCommas(apiData.deaths)}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Deaths</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{numberWithCommas(apiData.todayCases)}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Today's Cases</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{apiData.casesPerOneMillion}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Cases/Million</span>
+            </div>
+        </div>
+
+
+
+        <div class="box_container">
+            <div class="number_container_grey">
+                <span style="font-size: x-large;color: #718096;">{{apiData.activePerOneMillion}}</span>
+            </div>
+            <div class="type_container_grey">
+                <span style="color: white;">
+                    Active/Million</span>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="box_container">
+            <div class="number_container">
+                <span style="font-size: x-large;color: #38a169;">{{apiData.recoveredPerOneMillion}}</span>
+            </div>
+            <div class="type_container">
+                <span style="color: white;">
+                    Recovered/Million</span>
+
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{apiData.criticalPerOneMillion}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Critical/Million</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container">
+                <span style="font-size: x-large;color: #38a169;">{{apiData.testsPerOneMillion}}</span>
+            </div>
+            <div class="type_container">
+                <span style="color: white;">
+                 Tests/Million</span>
+
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{apiData.deathsPerOneMillion}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Deaths/Million</span>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+</div>

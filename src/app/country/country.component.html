@@ -1,0 +1,66 @@
+<div class="global-container">
+    <div class="spinnerclass" *ngIf="progressSpinner">
+    <mat-spinner class="custom-spinner" >
+    </mat-spinner>
+    </div>
+
+    <div *ngIf="!progressSpinner">
+
+      <div class="row">
+        <div class="box_container">
+            <div class="number_container_red">
+                <span style="font-size: x-large;color: #e53e3f;">{{numberWithCommas(CountryData.cases)}}</span>
+            </div>
+            <div class="type_container_red">
+                <span style="color: white;">
+                    Confirmed</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container">
+                <span style="font-size: x-large;color: #38a169;">{{numberWithCommas(CountryData.recovered)}}</span>
+            </div>
+            <div class="type_container">
+                <span style="color: white;">
+                    Recovered</span>
+
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container_grey">
+                <span style="font-size: x-large;color: #718096;">{{numberWithCommas(CountryData.tests)}}</span>
+            </div>
+            <div class="type_container_grey">
+                <span style="color: white;">
+                    Tests</span>
+            </div>
+        </div>
+
+        <div class="box_container">
+            <div class="number_container">
+                <span style="font-size: x-large;color: #38a169;">{{numberWithCommas(CountryData.deaths)}}</span>
+            </div>
+            <div class="type_container">
+                <span style="color: white;">
+                    Active</span>
+
+            </div>
+        </div>
+      </div>
+
+
+     <div class="row">
+     <div class="highchart-container" *ngIf="loadChart">
+          <highcharts-chart class="highchart"
+          [Highcharts]="Highcharts"
+          [options]="chartOptions">
+        </highcharts-chart>
+      </div>
+      <div  *ngIf="!loadChart">
+        <span>DATA NOT AVAILABLE FOR THIS COUNTRY</span>
+      </div>
+    </div>
+  </div>
+</div>
